@@ -1,0 +1,4 @@
+----------------------------------NODEJS ENGINGE--------------------------------------------------
+
+Node.js works based on the same "engine" that runs Google Chrome, which is V8.
+This feature allows node.js to "understand" and execute correctly the JS files.
