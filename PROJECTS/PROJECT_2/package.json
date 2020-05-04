@@ -1,0 +1,15 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "\"starting to use express\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r esm server.js"
+  },
+  "author": "Santiago Garcia Arango",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  }
+}
