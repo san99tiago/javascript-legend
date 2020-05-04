@@ -31,5 +31,5 @@ info.MySuperFunction();
 
 
 //Finally, this is how the whole "exports" obtained from the "index.js" file looks like:
-console.log("\nTHIS IS HOW THE EXPORTS OBTAINES LOOK LIKE:");
+console.log("\nTHIS IS HOW THE EXPORTS OBTAINED LOOK LIKE:");
 console.log(info);
