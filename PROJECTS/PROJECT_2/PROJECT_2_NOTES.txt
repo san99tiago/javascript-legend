@@ -1,0 +1,43 @@
+************************PROJECT_2 NOTES***************************
+
+-------------------------BEFORE LOOKING AT THIS PROJECT_1 -----------------------
+First, look at PROJECT_1_NOTES.txt to understand how to create the main JSON package
+and to correctly add the "express" and "esm"  modules using npm.
+
+Remeber that before we were executing commands in the terminal like this (any of them):
+>> node server.js
+>> node --experimental-modules m3.js
+>> node -r esm server.js              (this one requires package "esm" installed)
+(one of them should work fine, they are different available methods)
+In this project, we will be looking on how to "automate" this task properly.
+
+
+
+After those dependencies are installed, we will now start working with express!!!
+
+
+-----------------------------SIMPLE SERVER-------------------------------------------
+The server is going to be in "server.js" file.
+
+
+
+---------------------------INITIALIZE SERVER-----------------------------------------
+In order to be able to "initialize" our server.js , we will add a special instruction to 
+the "package.json" file, that is going to execute correctly the server.
+This is based on the "scripts" that the package.json gives us:
+So inside the package.json file we add: 
+  "scripts": {
+    "start": "node -r esm server.js"
+  },
+This is basically telling us that when we run "start", the "node -r esm server.js" will run,
+this gives us te advantage of "automating" some stuff.
+So to start the server (the server.js file), now we have to run:
+ >> npm start
+ >> npm run start
+ (both are exactly the same)
+ (there are some that have "shortcuts" like the "npm start", but some other don't )
+
+
+Now we can start to work propperly like the pro's!!
+
+
