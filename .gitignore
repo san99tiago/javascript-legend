@@ -1,0 +1,5 @@
+#ALL FILES AND DIRS THAT WE WANT TO IGNORE IN OUR PROJECT
+
+#All node_modules (this is because the right way is to install them in the same...
+#... folder as the package.json  and running: >>npm install )
+node_modules
