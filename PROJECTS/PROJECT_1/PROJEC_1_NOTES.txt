@@ -16,7 +16,9 @@ and other aspects like "how to run things in it".
 
 ---------------------------------USING NPM TO CREATE NODEJS PACKAGE------------------------------------
 The first step in order to create these JSON packages, is to use npm to initialize the package:
-On terminal:   >>npm init
+On terminal:   
+>>npm init
+
 After initializing it, we must answer the default questions to correctly create its basic info
 the only two mandatory fields are "name" and "version", but it's good to use all of them corrctly.
 
