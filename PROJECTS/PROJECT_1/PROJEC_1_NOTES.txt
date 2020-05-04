@@ -40,3 +40,17 @@ this is done with the "import m1 from './m1.js' " which indicates that is a loca
 We can import the global common libraries with "import <name_of_module> from 'name_of_module' "
 There is an example in m3.js file
 
+
+
+
+---------------------------------INSTALL EXTERNAL  LIBRARIES----------------------------------------------
+When there is a public available library (like the ones in github), you can install them into node_modules
+file, which will give us an excellent advantage because we can use opensourcode to our projects
+
+The easiest way to install them is to write in terminal: 
+>> npm install <library_name>
+(we installed:  >> npm install express)
+(we installed:  >> npm install esm)
+We imported express and esm in this PROJECT_1, so we can check that it is available in <node_modules> dir
+
+
