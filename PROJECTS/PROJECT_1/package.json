@@ -1,0 +1,14 @@
+{
+  "name": "project_1",
+  "version": "1.0.0",
+
+  "type": "module",
+
+  "description": "\"My first JSON package\"",
+  "main": "m1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santiago Garcia",
+  "license": "ISC"
+}
