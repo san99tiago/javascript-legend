@@ -1,0 +1,42 @@
+************************PROJECT_1 NOTES***************************
+
+----------------------------JSON BASIC UNDERSTANDING-------------------------------------------------
+"JSON" stands for "JavaScript Object Notation".
+This is a text format with the purpose of "exchange" information and data strategically.
+
+
+----------------------------------PACKAGE JSON INDICATIONS--------------------------------------------
+After understanding this basic idea, one important concept that is used is the "package.json" file.
+These files are used when we create a NODEJS environments and really important to use in order
+to understand the packages configurations and essential details.
+
+These package.json files gives us information about the name, the version, the author, the GIT repository
+and other aspects like "how to run things in it".
+
+
+---------------------------------USING NPM TO CREATE NODEJS PACKAGE------------------------------------
+The first step in order to create these JSON packages, is to use npm to initialize the package:
+On terminal:   >>npm init
+After initializing it, we must answer the default questions to correctly create its basic info
+the only two mandatory fields are "name" and "version", but it's good to use all of them corrctly.
+
+
+
+--------------------------------SETTING THE JSON PACKAGE TO BE <MODULE>--------------------------------
+After creating the package.json , it is important to specify the type of package that we are creating, 
+in order to do this, we must indicate the "type" field to be "module"
+(In order to verify this step, look a the package.json file and the field "type")
+
+
+
+--------------------------------IMPORT FILES THAT ARE IN OUR CREATED MODULE-----------------------------
+After we created the file "m1.js" and the JSON package, we can access to the "m1.js" module from "m2.js"
+this is done with the "import m1 from './m1.js' " which indicates that is a local modules form this dir.
+(carefull, now we have to run the commands like:  
+>> node --experimental-modules m2.js)
+
+
+---------------------------------IMPORT GLOBAL LIBRARIES-----------------------------------------------
+We can import the global common libraries with "import <name_of_module> from 'name_of_module' "
+There is an example in m3.js file
+
