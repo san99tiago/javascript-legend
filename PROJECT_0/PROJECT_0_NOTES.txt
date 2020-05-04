@@ -1,0 +1,11 @@
+************SOME IMPORTANT NOTES ABOUT THIS FIRST PROJECT_0****************
+
+---------------------------------------------------------------------------
+This is the "old way" of creating files and exporting/importing them to
+another JS file.
+This ability is really important, because we will be dealing with many
+packages that use this way of exports and requires.
+
+---------------------------------------------------------------------------
+In the next project, we will bre looking at the "new way" of creating these
+packages using the "JSON" approach.
