@@ -1,4 +1,13 @@
-----------------------------------NODEJS ENGINGE--------------------------------------------------
+--------------------------------NODEJS FIRST STEP-----------------------------------------------
+First of all, the most important thing is to have "node.js" installed correctly in the PC.
+To check this, we can type "node" in the terminal and verify that it enables its environment.
+Node.js also comes with NPM (Node Package Manager), that allows us to modify, change and understand
+all features of the JavaScript runtime environment Node.
+
+
+
+
+----------------------------------NODEJS ENGINE--------------------------------------------------
 
 Node.js works based on the same "engine" that runs Google Chrome, which is V8.
 This feature allows node.js to "understand" and execute correctly the JS files.
