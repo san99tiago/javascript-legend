@@ -41,3 +41,20 @@ So to start the server (the server.js file), now we have to run:
 Now we can start to work propperly like the pro's!!
 
 
+
+------------------------------HTTP BASIC COMMANDS--------------------------------------
+We must include the "import http from 'http' " in our server.js , because we will use this
+module funcitonality to interact correctly with the HTTP protocols (request and responses)
+
+but this library is really poor and makes us use a lot of extra libraries to work fine,
+so the best way to actually work with a server is using EXPRESS.JS !!!!!
+(therefore, our project_2 will be with express.js )
+
+
+
+-----------------------------------EXPRESS----------------------------------------------
+Express is a really good framework for web servers and helps us to handle everything easier
+Look at "server.js" to understand the basic concepts about express servers.
+
+
+
