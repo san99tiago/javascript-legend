@@ -1,7 +1,6 @@
 // WERE ARE GOING TO CREATE OUR FIRST SERVER HERE
 //Santiago Garcia Arango, May 2020
 
-console.log("WE ARE GOING TO CREATE OUR FIRST SERVER HERE!!!\n");
 
 //This is how we import the express module, in order to create servers easily
 import express from 'express'
@@ -41,4 +40,7 @@ app.get('/test_1', function(req,res,next) {
 
 //By this command, we keep the server running (otherways, it will stop)
 //This must be always run at the end of the code
-app.listen( 3000 );
+//It is important to notice that the "function(){}" is a callback and helps us send info to terminal
+const server = app.listen( 3000 , function() {
+    console.log('Listening on http://localhost:' + server.address().port );
+});
