@@ -1,4 +1,4 @@
-************************PROJECT_2 NOTES***************************
+************************PROJECT_3 NOTES***************************
 
 -------------------------BEFORE LOOKING AT THIS PROJECT -----------------------
 First of all, look at the projects before, in order to initialize a simple express.js
@@ -8,3 +8,5 @@ Then, we will install "express.js"  (>>npm i express)
 After that, we will install "nodemon.js" in devDepencies (>>npm i -D nodemon)
 
 
+-------------------------ADDED "my_modules" DIRECTORY---------------------------
+I also added the amazing functionality to add personalized modules created by me :)
