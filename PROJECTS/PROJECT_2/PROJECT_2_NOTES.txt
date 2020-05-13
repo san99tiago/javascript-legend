@@ -58,3 +58,24 @@ Look at "server.js" to understand the basic concepts about express servers.
 
 
 
+---------------------------------NODEMON------------------------------------------------
+This library is an ecelent way to keep the server "auto-updating" when we make changes in 
+the server even if it's running.
+An important thing to notice is that this will only matter in "development mode", this means
+that when we are testing the app, it will work, but it is NOT necesary to use it in 
+the production server.
+Because of this, it is better to install it in "D" mode ("Development") and the way to add 
+the package with this consideration is writting in terminal:
+
+>>npm install -D nodemon   (same as:  >>npm i -D nodemon)
+
+Now, when we want to run the server with "nodemon" funcitonality, we can run it like:
+>>nodemon server.js
+
+(But using the new skills for automating processes, we can add a "scripts" file named "dev",
+and when we want to run our server as development, we can run:
+>>npm run dev     )
+
+
+
+
