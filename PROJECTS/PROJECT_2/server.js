@@ -3,8 +3,8 @@
 
 
 //This is how we import the express module, in order to create servers easily
-import express from 'express'
-//This coul be also be done like " const express = require('express') " (other method)
+//(if we use "import" method):   "  import express from 'express' ""
+const express = require('express')
 
 //This is the default function to create and initialize a server (app) with express!
 const app = express();
