@@ -15,8 +15,8 @@ app.get('/', (request,response) => {
     response.send("THIS IS MY FIRST RESPONSE!!!");
     response.status(200);
 
-    //We show that a GET was donde (in the terminal and the time associated)
-    console.log( `${time.my_date()} , GET done to: '/' `);
+    //We show that a GET was donde (in the terminal)
+    console.log("GET done to: '/'");
 })
 
 
@@ -31,4 +31,5 @@ app.get('/', (request,response) => {
 //It is important to notice that the "function(){}" is a callback and helps us send info to terminal
 const server = app.listen( 3000 , function() {
     console.log('Listening on http://localhost:' + server.address().port );
+    console.log( `${time.my_date()} , ${time.my_time()} , server initialized`);
 });
