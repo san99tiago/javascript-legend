@@ -17,8 +17,8 @@ function create_file( buffer ) {
         if (err) throw err;
     });
 
-    //Create txt file inside the "server_inits" folder
-    fs.writeFile("./server_inits/my_cool_info.txt", buffer, function(err) {
+    //Append info to the txt file inside the "server_inits" folder
+    fs.appendFile("./server_inits/my_cool_info.txt", buffer, function(err) {
         
         //This is how we check if there were errors in the "callback"
         if (err){
