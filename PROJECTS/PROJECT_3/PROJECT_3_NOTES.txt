@@ -21,3 +21,6 @@ asynchronous functions of different modules and this callbacks return crucial
 information for something of the main purpose of it.
 See "create_txt.js" located in "my_modules" for seeing two callbacks examples
 
+
+---------------------------------COOL MODULE: colors------------------------------
+This simple module, allows us to show info in console, with customized colors
