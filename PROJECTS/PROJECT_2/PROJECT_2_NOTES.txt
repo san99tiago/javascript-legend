@@ -4,7 +4,7 @@
 First, look at PROJECT_1_NOTES.txt to understand how to create the main JSON package
 and to correctly add the "express" and "esm"  modules using npm.
 
-Remeber that before we were executing commands in the terminal like this (any of them):
+Remember that before we were executing commands in the terminal like this (any of them):
 >> node server.js
 >> node --experimental-modules m3.js
 >> node -r esm server.js              (this one requires package "esm" installed)
@@ -38,13 +38,13 @@ So to start the server (the server.js file), now we have to run:
  (there are some that have "shortcuts" like the "npm start", but some other don't )
 
 
-Now we can start to work propperly like the pro's!!
+Now we can start to work properly like the pro's!!
 
 
 
 ------------------------------HTTP BASIC COMMANDS--------------------------------------
 We must include the "import http from 'http' " in our server.js , because we will use this
-module funcitonality to interact correctly with the HTTP protocols (request and responses)
+module functionality to interact correctly with the HTTP protocols (request and responses)
 
 but this library is really poor and makes us use a lot of extra libraries to work fine,
 so the best way to actually work with a server is using EXPRESS.JS !!!!!
@@ -59,17 +59,17 @@ Look at "server.js" to understand the basic concepts about express servers.
 
 
 ---------------------------------NODEMON------------------------------------------------
-This library is an ecelent way to keep the server "auto-updating" when we make changes in 
+This library is an excellent way to keep the server "auto-updating" when we make changes in 
 the server even if it's running.
 An important thing to notice is that this will only matter in "development mode", this means
-that when we are testing the app, it will work, but it is NOT necesary to use it in 
+that when we are testing the app, it will work, but it is NOT necessary to use it in 
 the production server.
 Because of this, it is better to install it in "D" mode ("Development") and the way to add 
-the package with this consideration is writting in terminal:
+the package with this consideration is writing in terminal:
 
 >>npm install -D nodemon   (same as:  >>npm i -D nodemon)
 
-Now, when we want to run the server with "nodemon" funcitonality, we can run it like:
+Now, when we want to run the server with "nodemon" functionality, we can run it like:
 >>nodemon server.js
 
 (But using the new skills for automating processes, we can add a "scripts" file named "dev",
