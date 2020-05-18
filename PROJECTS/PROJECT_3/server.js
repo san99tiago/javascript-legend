@@ -33,5 +33,5 @@ app.get('/', (request,response) => {
 const server = app.listen( 3000 , function() {
     console.log('Listening on http://localhost:' + server.address().port );
     console.log( `${time.my_date()} , ${time.my_time()} , server initialized`);
-    fs.create_file();
+    fs.create_file( `server initialized, ${time.my_date()} , ${time.my_time()}` );
 });
