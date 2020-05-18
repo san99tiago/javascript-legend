@@ -19,4 +19,5 @@ and calling it in other JS files (like the "server.js" file)
 This is a really interesting concept in JavaScript, which will help us to work with 
 asynchronous functions of different modules and this callbacks return crucial
 information for something of the main purpose of it.
+See "create_txt.js" located in "my_modules" for seeing two callbacks examples
 
