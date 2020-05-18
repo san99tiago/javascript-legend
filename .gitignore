@@ -3,3 +3,6 @@
 #All node_modules (this is because the right way is to install them in the same...
 #... folder as the package.json  and running: >>npm install )
 node_modules
+
+#Ignore VSCode settings
+.vscode
