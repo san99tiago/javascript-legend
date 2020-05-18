@@ -15,16 +15,9 @@ const express = require('express')
 const app = express();
 
 
-//handle GET in the default path of the IP
-app.get('/', (request,response) => {
-
-    response.send("THIS IS MY FIRST RESPONSE!!!");
-    response.status(200);
-
-    //We show that a GET was done (in the terminal)
-    //note: the "bgGreen" is used with the "colors" package in our modules (see PROJECT_3_NOTES.txt)
-    console.log( "GET done to: '/'".bgGreen );
-})
+//For being organized and make a prettier code, we must "modularize" our routes...
+//We are creating all the routes processing in <my_routes>/index.js file (look at it for details)
+app.use( require('./my_routes/index') );
 
 
 
