@@ -5,7 +5,11 @@
 const time = require('./my_modules/time');
 const fs = require('./my_modules/create_txt');
 
-//require the "express.js" package and initialize it correctly in "app"
+
+//require the "colors" package (cool module to enable colors for the "console.log(---) in terminal")
+const colors = require('colors');
+
+//require the "express" package and initialize it correctly in "app"
 const express = require('express')
 const app = express();
 
@@ -17,7 +21,8 @@ app.get('/', (request,response) => {
     response.status(200);
 
     //We show that a GET was done (in the terminal)
-    console.log("GET done to: '/'");
+    //note: the "bgGreen" is used with the "colors" package in our modules (see PROJECT_3_NOTES.txt)
+    console.log( "GET done to: '/'".bgGreen );
 })
 
 
@@ -31,7 +36,10 @@ app.get('/', (request,response) => {
 //This must be always run at the end of the code
 //It is important to notice that the "function(){}" is a callback and helps us send info to terminal
 const server = app.listen( 3000 , function() {
-    console.log('Listening on http://localhost:' + server.address().port );
-    console.log( `${time.my_date()} , ${time.my_time()} , server initialized`);
+    //When "starting the server", show info and use functionalities of <my_modules>
+    console.log( ('Listening on http://localhost:' + server.address().port).bgBlue );
+    console.log( `${time.my_date()} , ${time.my_time()} , server initialized`.bgYellow);
+
+    //Create register of the server initialized (using <my_modules>/create_file.js)
     fs.create_file( `server initialized, ${time.my_date()} , ${time.my_time()} \n` );
 });
