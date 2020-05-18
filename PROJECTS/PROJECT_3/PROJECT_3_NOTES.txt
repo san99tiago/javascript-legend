@@ -5,8 +5,18 @@ First of all, look at the projects before, in order to initialize a simple expre
 server and the basic dependencies for this file.
 In this case we will be creating our package.json first  (>>npm init)
 Then, we will install "express.js"  (>>npm i express)
-After that, we will install "nodemon.js" in devDepencies (>>npm i -D nodemon)
+After that, we will install "nodemon.js" in devDependencies (>>npm i -D nodemon)
 
 
 -------------------------ADDED "my_modules" DIRECTORY---------------------------
 I also added the amazing functionality to add personalized modules created by me :)
+
+This file is going to allow me to create personalized functions, classes, variables...
+and calling it in other JS files (like the "server.js" file)
+
+
+---------------------------------CALLBACKS--------------------------------------
+This is a really interesting concept in JavaScript, which will help us to work with 
+asynchronous functions of different modules and this callbacks return crucial
+information for something of the main purpose of it.
+
