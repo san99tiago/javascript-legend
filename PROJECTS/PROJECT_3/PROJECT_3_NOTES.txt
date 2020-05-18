@@ -24,3 +24,10 @@ See "create_txt.js" located in "my_modules" for seeing two callbacks examples
 
 ---------------------------------COOL MODULE: colors------------------------------
 This simple module, allows us to show info in console, with customized colors
+
+
+
+----------------------------ORGANIZING ROUTES OF THE SERVER------------------------
+In order to be more organized with the different routes of
+
+
