@@ -19,3 +19,6 @@ This whole repository is based on the main tutorial, but I added some improvemen
 
 Good luck and I hope it's useful for you too. :alien: !
 
+## Author
+Santiago García Arango
+
