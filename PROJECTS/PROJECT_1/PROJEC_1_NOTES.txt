@@ -34,7 +34,7 @@ in order to do this, we must indicate the "type" field to be "module"
 --------------------------------IMPORT FILES THAT ARE IN OUR CREATED MODULE-----------------------------
 After we created the file "m1.js" and the JSON package, we can access to the "m1.js" module from "m2.js"
 this is done with the "import m1 from './m1.js' " which indicates that is a local modules form this dir.
-(carefull, now we have to run the commands like:  
+(careful, now we have to run the commands like:  
 >> node --experimental-modules m2.js)
 
 
