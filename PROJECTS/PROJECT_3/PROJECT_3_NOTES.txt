@@ -28,6 +28,11 @@ This simple module, allows us to show info in console, with customized colors
 
 
 ----------------------------ORGANIZING ROUTES OF THE SERVER------------------------
-In order to be more organized with the different routes of
+In order to be more organized with the different routes of the server, we will now
+create a specific directory to achieve this task. (Dirname = "my_routes").
+
+For creating all routes in another file, check the way that we create a "Router" in 
+the <my_routes>/index.js file and understand how we make use of it in "server.js"!
+
 
 
