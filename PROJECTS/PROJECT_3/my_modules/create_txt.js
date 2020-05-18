@@ -10,16 +10,23 @@ const fs = require("fs");
 //(First parameter: name of the file that we create)
 //(Second parameter: data to write)
 //(Third parameter: callback-->function that "receives" error when ending file operation)
-function create_file() {
-    fs.writeFile("./servers_inits/my_cool_info.txt", null, function(err) {
+function create_file( buffer ) {
+
+    //Make sure the folder where the txt file will be, exists, otherwise, create it
+    fs.mkdir('./server_inits', { recursive: true }, (err) => {
+        if (err) throw err;
+    });
+
+    //Create txt file inside the "server_inits" folder
+    fs.writeFile("./server_inits/my_cool_info.txt", buffer, function(err) {
         
         //This is how we check if there were errors in the "callback"
         if (err){
             console.log(err);
+        }else{
+            //If everything was ok (NO errors)
+            console.log("TXT file process was ok!!!");
         }
-
-        //If everything was ok (NO errors)
-        console.log("TXT file process was ok!!!");
 
 
     });
@@ -28,8 +35,8 @@ function create_file() {
 
 
 //In order to export an object (instead of each function), this is how we do it
-const fs = {}; //Create object to export
-fs.create_file = create_file; //Add function to the object
+const create_txt = {}; //Create object to export
+create_txt.create_file = create_file; //Add function to the object
 
 //Then we export the whole object created before
-module.exports = fs;
+module.exports = create_txt;
