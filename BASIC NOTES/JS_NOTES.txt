@@ -1,0 +1,11 @@
+IMPORTANT CONCEPTS IN JAVASCRIPT:
+
+------------------ HOISTING --------------------
+It is a concept that applies when defining variables with "var" or when we define
+functions. It means that JavaScript "elevates" their defining to the top (first)
+and then, it changes the variable value, to the specific one in line.
+It also means that when a function is called, and there are local variables in its
+scope, they will be create globally and could be accessed globally after.
+
+Here is a video for a simple and powerful explanation:
+https://www.youtube.com/watch?v=uI6o97A4IrI
