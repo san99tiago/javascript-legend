@@ -9,3 +9,11 @@ scope, they will be create globally and could be accessed globally after.
 
 Here is a video for a simple and powerful explanation:
 https://www.youtube.com/watch?v=uI6o97A4IrI
+
+
+--------------------- SCOPE --------------------
+They are the part of "memory" that variables and the program can reach when implementing
+specific functions and variables in the programs. There's is an important aspect 
+here, which is that there are two main scopes: local and global scopes.
+One importat remark is that when defining variables with "var", they are in the
+global scope, whiel when defining them with "let", they achieve the local scope.
