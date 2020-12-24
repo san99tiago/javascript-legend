@@ -18,3 +18,9 @@ here, which is that there are two main scopes: local and global scopes.
 One importat remark is that when defining variables with "var", they are in the
 global scope, while when defining them with "let", they achieve the local scope.
 So it is a better approach to use "let", to respect the specific scope used.
+
+------------------- COMMON ERROR -----------------
+When using arrow functions in JS, it is common to have an error: calling "this"
+and instead of getting the specific object attributes, we get the "window" 
+object attributes, which means that we have to be carefull of using these functions
+and trying to change or access the "this" object structure.
