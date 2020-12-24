@@ -16,4 +16,5 @@ They are the part of "memory" that variables and the program can reach when impl
 specific functions and variables in the programs. There's is an important aspect 
 here, which is that there are two main scopes: local and global scopes.
 One importat remark is that when defining variables with "var", they are in the
-global scope, whiel when defining them with "let", they achieve the local scope.
+global scope, while when defining them with "let", they achieve the local scope.
+So it is a better approach to use "let", to respect the specific scope used.
