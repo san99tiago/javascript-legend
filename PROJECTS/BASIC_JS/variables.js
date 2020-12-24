@@ -1,6 +1,9 @@
 // VARIABLES IN JAVASACRIPT
 // Santiago Garcia Arango
 
+// Important remark: it's a better approach to define variables with "let", ...
+// ... because this will create the memory in the specific current scope.
+
 // Declare variables (only initialized)
 var user_id;
 
