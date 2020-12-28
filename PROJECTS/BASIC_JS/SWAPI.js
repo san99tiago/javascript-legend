@@ -13,9 +13,11 @@
 //     control of the order in which logs are shown.
 // --> TEST 4: Calling multiple GET methods, showing their info and adding...
 //     control of the order in which logs are shown with callbacks.
+// --> TEST 5: Organizing callbacks and adding error handling in GET method.
+// --> TEST 6: Adding promises to solve "callback hell" and organize code...
+//     also added way of calling promises in "series" or "parallel".
 
 // ----------------------------------------------------------------------------
-
 
 // Define constant elements for the urls of the Star Wars API
 const API_URL = 'https://swapi.dev/api/';
@@ -35,6 +37,7 @@ function test_1() {
 
     $.get(path, get_options, exploreResponseArguments);
 }
+
 
 // ----------------- TEST 2 ----------------------
 // Show some attributes of our character (response)
@@ -75,7 +78,6 @@ function test_3() {
 }
 
 
-
 // ----------------- TEST 4 ----------------------
 // Get any person that we want from the Star Wars API based on their "id"
 function test_4() {
@@ -108,9 +110,111 @@ function test_4() {
     });
 }
 
-// RUN TESTS
+
+// ----------------- TEST 5 ----------------------
+// Get any person that we want from the Star Wars API based on their "id"
+function test_5() {
+
+    function getPersonBasedOnIdWithCallback (id, callback) {
+        // Create our JQuery arguments for doing GET to the SWAPI
+        const path = `${API_URL}${PEOPLE_URL.replace(':id', String(id))}`;
+        const get_options = {crossDomain: true};
+
+        $.get(path, get_options, callback).fail(function () {
+            console.log(`There was an error trying to get the person ${id}`);
+        });
+    };
+
+
+    // Here we control the order of the results with the callbacks
+    getPersonBasedOnIdWithCallback(1, function (person) {
+        console.log(`\n\nHello, my name is ${person.name}`);
+
+        getPersonBasedOnIdWithCallback(2, function (person) {
+            console.log(`\n\nHello, my name is ${person.name}`);
+
+            getPersonBasedOnIdWithCallback(3, function (person) {
+                console.log(`\n\nHello, my name is ${person.name}`);
+
+                getPersonBasedOnIdWithCallback(4, function (person) {
+                    console.log(`\n\nHello, my name is ${person.name}`);
+
+                    getPersonBasedOnIdWithCallback(5);
+                    console.log(`\n\nHello, my name is ${person.name}`);
+
+                });
+            });
+        });
+    });
+}
+
+
+// ----------------- TEST 6 ----------------------
+// Get any person that we want from the Star Wars API based on their "id"
+function test_6(series_or_parallel) {
+
+    function getPersonBasedOnIdWithPromise (id) {
+        return new Promise((resolve, reject) => {
+
+            // Create our JQuery arguments for doing GET to the SWAPI
+            const path = `${API_URL}${PEOPLE_URL.replace(':id', String(id))}`;
+            const get_options = {crossDomain: true};
+
+            $
+                .get(path, get_options, function (data) {
+                    resolve(data);
+                })
+                .fail(() => reject(id));
+        });
+    };
+
+
+    // Here we control the order of the results with promises in series
+    if (series_or_parallel == "series") {
+        getPersonBasedOnIdWithPromise(1)
+        .then(person => {
+            console.log(`\n\nHello, my name is ${person.name}`);
+            return getPersonBasedOnIdWithPromise(2)
+        })
+        .then(person => {
+            console.log(`\n\nHello, my name is ${person.name}`);
+                return getPersonBasedOnIdWithPromise(3)
+            })
+            .then(person => {
+                console.log(`\n\nHello, my name is ${person.name}`);
+                return getPersonBasedOnIdWithPromise(4)
+            })
+            .then(person => {
+                console.log(`\n\nHello, my name is ${person.name}`);
+                return getPersonBasedOnIdWithPromise(5)
+            })
+            .then(person => {
+                console.log(`\n\nHello, my name is ${person.name}`);
+            })
+            .catch(id => {
+                console.log(`There was an error in person with id ${id}`);
+            })
+    }
+
+    // Here we control the order of the results with promises in parallel
+    if (series_or_parallel == "parallel") {
+        let persons_ids = [1, 2, 3, 4, 5];
+        let promises = persons_ids.map(id => getPersonBasedOnIdWithPromise(id));
+        Promise
+            .all(promises)
+            .then(persons => console.table(persons))
+            .catch(id => console.log(`There was an error in person with id ${id}`))
+    }
+
+}
+
+
+// RUN TESTS (run one at a time to check specific results)
 // test_1();
 // test_2();
 // test_3();
-test_4();
+// test_4();
+// test_5();
+test_6("series");
+// test_6("parallel");
 
