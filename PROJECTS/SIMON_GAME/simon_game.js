@@ -33,12 +33,17 @@ class Game {
 
     nextLevel() {
         this.showSequence();
+        this.addClickEvents();
     }
 
     showSequence() {
         for (let i = 0; i < this.level; i++) {
-            let current_color = this.transformNumberToColor(this.sequence[i]);
-            this.highlightColor(current_color);
+            // Get specific color based on current number
+            const current_color = this.transformNumberToColor(this.sequence[i]);
+
+            // setTimeout is necessary so that the functions are in the correct
+            // ... times, otherwise, they would call all at the same time
+            setTimeout(() => this.highlightColor(current_color), 800 * i);
         }
     }
 
@@ -61,6 +66,17 @@ class Game {
 
     unHighlightColor(current_color) {
         this.colors[current_color].classList.remove('light');
+    }
+
+    addClickEvents() {
+        this.colors.blue.addEventListener('click', this.chooseColor)
+        this.colors.purple.addEventListener('click', this.chooseColor)
+        this.colors.orange.addEventListener('click', this.chooseColor)
+        this.colors.green.addEventListener('click', this.chooseColor)
+    }
+
+    chooseColor(ev) {
+        console.log(ev);
     }
 }
 
