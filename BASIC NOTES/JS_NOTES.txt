@@ -44,3 +44,25 @@ To download it, we go into:
 https://jquery.com
 and click "Download JQuery" button and install the desired format/version.
 (for this tutorial, I will be using JQuey with CDN 3x minified).
+
+---------------------- PROMISES ----------------------
+Promises are special values that we don't know yet and are used with asynchronous
+functions. Promises have three possible states: pending, fulfilled, rejected.
+
+            ----> fulfilled (resolve) [ .then( val => ... ) ]
+            |
+pending-----
+            |
+            ----> rejected (reject) [ .catch( err => ... )]
+
+The promise structure is:
+>> new Promise(function(resolve, reject) {
+    ...
+}).then(val=>{
+    ...
+}).catch(err=> {
+    ...
+})
+
+See "SWAPI.js" to see examples of promises and how to run them in "series" or 
+in "parallel" based on the needs.
