@@ -1,0 +1,96 @@
+/* Styles and important properties for simon_game */
+/* Santiago Garcia Arango */
+body {
+    margin: 0;
+    background: #dedede;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.gameboard {
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-height: 60vh;
+    max-width: 60vh;
+}
+
+.color {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: left;
+}
+
+.blue {
+    background: #22a6b3;
+}
+
+.blue.light {
+    background: #7ed6df;
+}
+
+.purple {
+    background: #be2edd;
+}
+
+.purple.light {
+    background: #e056fd;
+}
+
+.orange {
+    background: #f0932b;
+}
+
+.orange.light {
+    background: #ffbe76;
+}
+
+.green {
+    background: #6ab04c;
+}
+
+.green.light {
+    background: #badc58;
+}
+
+.btn-start {
+    cursor: pointer;
+    width: 400px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-bottom: 4px solid #c4c6c7;
+    border-radius: 8px;
+    font-size: 3em;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+    transition: .5s;
+    outline: none;
+}
+
+.btn-start:hover {
+    color: #eeccff;
+    background: #2c3e50;
+    border-bottom: 4px solid #1f3346;
+}
+
+.btn-start:active {
+    transform: scale(.95);
+}
+
+.hide {
+    display: none;
+}
