@@ -3,23 +3,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
     <link rel="stylesheet" href="simon_game.css">
     
     <title>Santi's Simon Game</title>
 </head>
 <body>
-    
-    <div class="gameboard">
-        <!-- attributes with the structure of "data-something" appear in an -->
-        <!-- special "dataset" attribute on browser DOM-->
-        <div id="blue" class="color blue left" data-color="blue"></div>
-        <div id="purple" class="color purple right" data-color="purple"></div>
-        <div id="orange" class="color orange left" data-color="orange"></div>
-        <div id="green" class="color green right" data-color="green"></div>
-        <button id="beginButton" class="btn-start" onclick="startGame()">START!</button>
-    </div>
+    <div class="container-fluid">
+        <div class="col-12 offset-4">
+            <h1>SANTIAGO GARC&Iacute;A</h1>
+        </div>
 
+        <div class="col-12 offset-3">
+            <p>Start the game by pressing the button. Then click the elements following the sequence.</p>
+        </div>
+
+
+        <div class="gameboard">
+            <!-- attributes with the structure of "data-something" appear in an -->
+            <!-- special "dataset" attribute on browser DOM-->
+            <div id="blue" class="color blue left" data-color="blue"></div>
+            <div id="purple" class="color purple right" data-color="purple"></div>
+            <div id="orange" class="color orange left" data-color="orange"></div>
+            <div id="green" class="color green right" data-color="green"></div>
+            <button id="beginButton" class="btn-start" onclick="startGame()">START!</button>
+        </div>
+    </div>
+        
     <script src="simon_game.js"></script>
 
 </body>

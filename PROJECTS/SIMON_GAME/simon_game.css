@@ -5,7 +5,7 @@ body {
     background: #dedede;
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
 }
 
 .gameboard {
