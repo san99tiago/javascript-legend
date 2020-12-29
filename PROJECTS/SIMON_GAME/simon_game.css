@@ -8,7 +8,7 @@ body {
     height: 85vh;
 }
 
-h1 {
+h2 {
     color:rgb(24, 38, 233);
 }
 
@@ -18,8 +18,8 @@ h1 {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    max-height: 60vh;
-    max-width: 60vh;
+    max-height: 50vh;
+    max-width: 50vh;
 }
 
 .color {
@@ -70,8 +70,8 @@ h1 {
 
 .btn-start {
     cursor: pointer;
-    width: 400px;
-    height: 100px;
+    width: 200px;
+    height: 80px;
     background: #ecf0f1;
     color: #2c3e50;
     border: none;
@@ -79,8 +79,8 @@ h1 {
     border-radius: 8px;
     font-size: 3em;
     position: absolute;
-    top: calc(50% - 50px);
-    left: calc(50% - 200px);
+    top: calc(50% - 40px);
+    left: calc(50% - 100px);
     transition: .5s;
     outline: none;
 }
