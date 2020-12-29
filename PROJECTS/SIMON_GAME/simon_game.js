@@ -7,17 +7,20 @@ const purple = document.getElementById('purple')
 const orange = document.getElementById('orange')
 const green = document.getElementById('green')
 const beginButton = document.getElementById('beginButton')
+const LAST_LEVEL = 5;
 
 class Game {
     constructor() {
         this.initialize();
         this.generateSequence();
-        this.nextLevel();
+        setTimeout(this.nextLevel, 500);
     }
 
     initialize() {
         // This allows to add a "none" to the display property
         beginButton.classList.add('hide');
+        // This lets us keep the same "this" related to Game, instead of Window
+        this.nextLevel = this.nextLevel.bind(this)
         this.level = 1;
         this.colors = {
             blue: blue,
@@ -32,6 +35,7 @@ class Game {
     }
 
     nextLevel() {
+        this.sublevel = 0;
         this.showSequence();
         this.addClickEvents();
     }
@@ -39,48 +43,100 @@ class Game {
     showSequence() {
         for (let i = 0; i < this.level; i++) {
             // Get specific color based on current number
-            const current_color = this.transformNumberToColor(this.sequence[i]);
+            const currentColor = this.transformNumberToColor(this.sequence[i]);
 
             // setTimeout is necessary so that the functions are in the correct
             // ... times, otherwise, they would call all at the same time
-            setTimeout(() => this.highlightColor(current_color), 800 * i);
+            setTimeout(() => this.highlightColor(currentColor), 1000 * i);
         }
     }
 
     transformNumberToColor(number) {
-        if (number == 1) {
+        if (number == 0) {
             return 'blue';
-        } else if (number == 2) {
+        } else if (number == 1) {
             return 'purple'; 
-        } else if (number == 3) {
+        } else if (number == 2) {
             return 'orange'; 
         } else {
             return 'green';
         }
     }
 
-    highlightColor(current_color) {
-        this.colors[current_color].classList.add('light');
-        setTimeout(() => this.unHighlightColor(current_color), 400);
+    transformColorToNumber(color) {
+        if (color == 'blue') {
+            return 0;
+        } else if (color == 'purple') {
+            return 1; 
+        } else if (color == 'orange') {
+            return 2; 
+        } else {
+            return 3;
+        }
     }
 
-    unHighlightColor(current_color) {
-        this.colors[current_color].classList.remove('light');
+    highlightColor(currentColor) {
+        this.colors[currentColor].classList.add('light');
+        setTimeout(() => this.unHighlightColor(currentColor), 400);
+    }
+
+    unHighlightColor(currentColor) {
+        this.colors[currentColor].classList.remove('light');
     }
 
     addClickEvents() {
-        this.colors.blue.addEventListener('click', this.chooseColor)
-        this.colors.purple.addEventListener('click', this.chooseColor)
-        this.colors.orange.addEventListener('click', this.chooseColor)
-        this.colors.green.addEventListener('click', this.chooseColor)
+        // Add event listeners for clicks on each button
+        // remark: bind is to let the browser know that the object is the Game,
+        // ... and not the specific HTML element
+        this.colors.blue.addEventListener('click', this.chooseColor.bind(this));
+        this.colors.purple.addEventListener('click', this.chooseColor.bind(this));
+        this.colors.orange.addEventListener('click', this.chooseColor.bind(this));
+        this.colors.green.addEventListener('click', this.chooseColor.bind(this));
+    }
+
+    removeClickEvents() {
+        // Delete event listeners for clicks on each button
+        // remark: bind is to let the browser know that the object is the Game,
+        // ... and not the specific HTML element
+        this.colors.blue.removeEventListener('click', this.chooseColor.bind(this));
+        this.colors.purple.removeEventListener('click', this.chooseColor.bind(this));
+        this.colors.orange.removeEventListener('click', this.chooseColor.bind(this));
+        this.colors.green.removeEventListener('click', this.chooseColor.bind(this));
     }
 
     chooseColor(ev) {
-        console.log(ev);
+        // console.log(ev);
+
+        // The target is created automatically and the "dataset" is an attribute
+        // ... that appears when we add in HTML the "data-something" propperty
+        const colorName = ev.target.dataset.color;
+        const colorNumber = this.transformColorToNumber(colorName);
+        this.highlightColor(colorName);
+
+        // Check if specific button click matches each element of the array that
+        // ... contains the desired sequence (check for correct choice)
+        if (colorNumber == this.sequence[this.sublevel]) {
+            this.sublevel++;
+
+            // Check if user gets to last element of sequence in each level
+            if (this.sublevel == this.level) {
+                this.level++;
+                this.removeClickEvents();
+
+                if (this.level == (LAST_LEVEL + 1)) {
+                    // TODO: win
+                } else {
+                    setTimeout(this.nextLevel, 1500);
+                }
+            }
+        } else {
+            // TODO: loose
+        }
+
     }
 }
 
 
 function startGame() {
-    var game = new Game();
+    window.game = new Game();
 }
