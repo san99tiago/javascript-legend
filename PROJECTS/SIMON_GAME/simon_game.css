@@ -8,6 +8,10 @@ body {
     height: 85vh;
 }
 
+h1 {
+    color:rgb(24, 38, 233);
+}
+
 .gameboard {
     height: 100vh;
     width: 100vh;
