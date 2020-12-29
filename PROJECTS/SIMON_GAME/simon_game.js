@@ -9,24 +9,37 @@ const green = document.getElementById('green')
 const beginButton = document.getElementById('beginButton')
 const LAST_LEVEL = 5;
 
+
 class Game {
     constructor() {
+        // Bind functoins to keep main object the Game and not window
+        this.initialize = this.initialize.bind(this);
+        this.chooseColor = this.chooseColor.bind(this);
+
         this.initialize();
         this.generateSequence();
         setTimeout(this.nextLevel, 500);
     }
 
     initialize() {
-        // This allows to add a "none" to the display property
-        beginButton.classList.add('hide');
+        // Let us show or hide the begin button
+        this.toggleBeginButton();
         // This lets us keep the same "this" related to Game, instead of Window
-        this.nextLevel = this.nextLevel.bind(this)
+        this.nextLevel = this.nextLevel.bind(this);
         this.level = 1;
         this.colors = {
             blue: blue,
             purple: purple,
             orange: orange,
             green: green
+        }
+    }
+
+    toggleBeginButton() {
+        if (beginButton.classList.contains('hide')) {
+            beginButton.classList.remove('hide');
+        } else {
+            beginButton.classList.add('hide');
         }
     }
 
@@ -77,7 +90,7 @@ class Game {
 
     highlightColor(currentColor) {
         this.colors[currentColor].classList.add('light');
-        setTimeout(() => this.unHighlightColor(currentColor), 400);
+        setTimeout(() => this.unHighlightColor(currentColor), 500);
     }
 
     unHighlightColor(currentColor) {
@@ -86,22 +99,18 @@ class Game {
 
     addClickEvents() {
         // Add event listeners for clicks on each button
-        // remark: bind is to let the browser know that the object is the Game,
-        // ... and not the specific HTML element
-        this.colors.blue.addEventListener('click', this.chooseColor.bind(this));
-        this.colors.purple.addEventListener('click', this.chooseColor.bind(this));
-        this.colors.orange.addEventListener('click', this.chooseColor.bind(this));
-        this.colors.green.addEventListener('click', this.chooseColor.bind(this));
+        this.colors.blue.addEventListener('click', this.chooseColor);
+        this.colors.purple.addEventListener('click', this.chooseColor);
+        this.colors.orange.addEventListener('click', this.chooseColor);
+        this.colors.green.addEventListener('click', this.chooseColor);
     }
 
     removeClickEvents() {
         // Delete event listeners for clicks on each button
-        // remark: bind is to let the browser know that the object is the Game,
-        // ... and not the specific HTML element
-        this.colors.blue.removeEventListener('click', this.chooseColor.bind(this));
-        this.colors.purple.removeEventListener('click', this.chooseColor.bind(this));
-        this.colors.orange.removeEventListener('click', this.chooseColor.bind(this));
-        this.colors.green.removeEventListener('click', this.chooseColor.bind(this));
+        this.colors.blue.removeEventListener('click', this.chooseColor);
+        this.colors.purple.removeEventListener('click', this.chooseColor);
+        this.colors.orange.removeEventListener('click', this.chooseColor);
+        this.colors.green.removeEventListener('click', this.chooseColor);
     }
 
     chooseColor(ev) {
@@ -119,20 +128,43 @@ class Game {
             this.sublevel++;
 
             // Check if user gets to last element of sequence in each level
-            if (this.sublevel == this.level) {
+            if (this.sublevel === this.level) {
                 this.level++;
                 this.removeClickEvents();
 
-                if (this.level == (LAST_LEVEL + 1)) {
-                    // TODO: win
+                if (this.level === (LAST_LEVEL + 1)) {
+                    this.winTheGame();
                 } else {
                     setTimeout(this.nextLevel, 1500);
                 }
             }
         } else {
-            // TODO: loose
+            this.loseTheGame();
         }
+    }
 
+    winTheGame() {
+        // Generate alert with "sweet alert" library added in html
+        swal("YOU WON THE GAME!",
+            "Congratulations, your memory is amazing! \
+            \nThis game was created by Santiago Garcia. \nDecember 2020",
+            "success")
+            .then(() => {
+                this.removeClickEvents();
+                this.initialize();
+            });
+    }
+
+    loseTheGame() {
+        // Generate alert with "sweet alert" library added in html
+        swal("YOU FAILED :(",
+            "Don't worry, keep trying to win the game! \
+            \nThis game was created by Santiago Garcia. \nDecember 2020",
+            "error")
+            .then(() => {
+                this.removeClickEvents();
+                this.initialize();
+            });
     }
 }
 
