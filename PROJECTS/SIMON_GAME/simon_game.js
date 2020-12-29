@@ -2,13 +2,15 @@
 // Santiago Garcia Arango
 
 // Access the necessary elements from the HTML
-const blue = document.getElementById('blue')
-const purple = document.getElementById('purple')
-const orange = document.getElementById('orange')
-const green = document.getElementById('green')
-const beginButton = document.getElementById('beginButton')
-const LAST_LEVEL = 5;
-
+const blue = document.getElementById('blue');
+const purple = document.getElementById('purple');
+const orange = document.getElementById('orange');
+const green = document.getElementById('green');
+const beginButton = document.getElementById('beginButton');
+const LAST_LEVEL = 8;
+var userHighscore = 0;
+var highscoreHTML = document.getElementById('highscore');
+var scoreHTML = document.getElementById('score');
 
 class Game {
     constructor() {
@@ -49,8 +51,17 @@ class Game {
 
     nextLevel() {
         this.sublevel = 0;
+        this.updateScoreAndHighscore();
         this.showSequence();
         this.addClickEvents();
+    }
+
+    updateScoreAndHighscore() {
+        scoreHTML.innerHTML = this.level - 1;
+        if (this.level > userHighscore) {
+            userHighscore = this.level - 1;
+        }
+        highscoreHTML.innerHTML = userHighscore;
     }
 
     showSequence() {
