@@ -23,14 +23,17 @@
         </div>
 
         <div class="row text-center mt-3">
-            <div class="col">
+            <div class="col-6">
                 <h3>SCORE: <span id="score">0</span></h3>
                 <h3>HIGHSCORE: <span id="highscore">0</span></h3>
+            </div>
+            <div class="col-6">
+                <button id="beginButton" class="btn-start btn" onclick="startGame()">START!</button>
             </div>
         </div>
 
         <div class="row text-center">
-            <div class="col-6 offset-3">
+            <div class="col-10 offset-1">
                 <div class="gameboard align-items-center m-auto">
                     <!-- attributes with the structure of "data-something" appear in an -->
                     <!-- special "dataset" attribute on browser DOM-->
@@ -38,10 +41,11 @@
                     <div id="purple" class="color purple right" data-color="purple"></div>
                     <div id="orange" class="color orange left" data-color="orange"></div>
                     <div id="green" class="color green right" data-color="green"></div>
-                    <button id="beginButton" class="btn-start btn" onclick="startGame()">START!</button>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
