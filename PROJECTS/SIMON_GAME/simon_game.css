@@ -13,8 +13,8 @@ h2 {
 }
 
 .gameboard {
-    height: 100vh;
-    width: 100vh;
+    height: 80vh;
+    width: 80vh;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
@@ -79,8 +79,8 @@ h2 {
     border-radius: 8px;
     font-size: 3em;
     position: absolute;
-    top: calc(50% - 40px);
-    left: calc(50% - 100px);
+    /* top: calc(40%); */
+    /* left: calc(40%); */
     transition: .5s;
     outline: none;
 }
