@@ -13,13 +13,13 @@ h2 {
 }
 
 .gameboard {
-    height: 80vh;
-    width: 80vh;
+    height: 55vh;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
-    max-height: 50vh;
-    max-width: 50vh;
+    max-height: 60vh;
+    max-width: 60vh;
+    position: relative;
 }
 
 .color {
