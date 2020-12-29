@@ -12,26 +12,33 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="col-12 offset-4">
-            <h1>SANTIAGO GARC&Iacute;A</h1>
+
+        <br><br><br>
+
+        <div class="row text-center mt-5">
+            <div class="col-12">
+                <h1>SANTI GARC&Iacute;A'S GAME</h1>
+                <p>Start the game by pressing the button. Then click the elements following the sequence.</p>
+            </div>
         </div>
 
-        <div class="col-12 offset-3">
-            <p>Start the game by pressing the button. Then click the elements following the sequence.</p>
-        </div>
 
-
-        <div class="gameboard">
-            <!-- attributes with the structure of "data-something" appear in an -->
-            <!-- special "dataset" attribute on browser DOM-->
-            <div id="blue" class="color blue left" data-color="blue"></div>
-            <div id="purple" class="color purple right" data-color="purple"></div>
-            <div id="orange" class="color orange left" data-color="orange"></div>
-            <div id="green" class="color green right" data-color="green"></div>
-            <button id="beginButton" class="btn-start" onclick="startGame()">START!</button>
+        <div class="row text-center">
+            <div class="col">
+                <div class="gameboard m-auto">
+                    <!-- attributes with the structure of "data-something" appear in an -->
+                    <!-- special "dataset" attribute on browser DOM-->
+                    <div id="blue" class="color blue left" data-color="blue"></div>
+                    <div id="purple" class="color purple right" data-color="purple"></div>
+                    <div id="orange" class="color orange left" data-color="orange"></div>
+                    <div id="green" class="color green right" data-color="green"></div>
+                    <button id="beginButton" class="btn-start btn" onclick="startGame()">START!</button>
+                </div>
+            </div>
         </div>
     </div>
-        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="simon_game.js"></script>
 
 </body>
