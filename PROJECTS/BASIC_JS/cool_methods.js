@@ -41,3 +41,14 @@ var is_something_less_than_10 = articles.some(function(article){
     return article.price <= 10;
 });
 console.log("\nis_something_less_than_10: ", is_something_less_than_10);
+
+// Understanding "includes"
+var article_prices = articles.map(function(article){
+    return article.price
+});
+
+if (article_prices.includes(80)) {
+    console.log("\nYes, we have an article of price 80");
+} else {
+    console.log("\nNo, we don't have an article of price 80");
+}
