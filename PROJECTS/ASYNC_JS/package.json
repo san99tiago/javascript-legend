@@ -1,0 +1,17 @@
+{
+  "name": "async_js",
+  "version": "1.0.0",
+  "description": "Understanding Asynchronous functions in JavaScript",
+  "main": "src/index.js",
+  "scripts": {
+    "callback": "node src/index.js"
+  },
+  "keywords": [
+    "callbacks",
+    "promises",
+    "async",
+    "javascript"
+  ],
+  "author": "Santiago Garcia Arango",
+  "license": "MIT"
+}
