@@ -13,5 +13,8 @@
     "javascript"
   ],
   "author": "Santiago Garcia Arango",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
