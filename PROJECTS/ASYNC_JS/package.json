@@ -1,10 +1,14 @@
 {
   "name": "async_js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Understanding Asynchronous functions in JavaScript",
-  "main": "src/index.js",
   "scripts": {
-    "callback": "node src/index.js"
+    "simple_callbacks": "node src/simple_callbacks.js",
+    "simple_promises": "node src/simple_promises.js",
+    "requests_callbacks": "node src/requests_callbacks.js",
+    "requests_promises": "node src/requests_promises.js",
+    "fetch_api": "node src/fetch_api.js",
+    "async_await": "node src/async_await.js"
   },
   "keywords": [
     "callbacks",
@@ -15,6 +19,7 @@
   "author": "Santiago Garcia Arango",
   "license": "MIT",
   "dependencies": {
+    "node-fetch": "^2.6.1",
     "xmlhttprequest": "^1.8.0"
   }
 }
