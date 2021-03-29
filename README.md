@@ -10,6 +10,8 @@ Here are some of the resources that were used for this repository:
 
 * https://www.youtube.com/watch?v=gG3pytAY2MY
 * https://platzi.com/clases/basico-javascript/
+* https://www.youtube.com/playlist?list=PL4cUxeGkcC9jx2TTZk3IGWKSbtugYdrlu
+* https://platzi.com/clases/asincronismo-js/
 
 
 ## Libraries and Dependencies :exclamation:
@@ -26,4 +28,3 @@ Good luck and I hope it's convenient for you too. :alien: !
 
 ## Author :musical_keyboard:
 Santiago Garcia Arango
-
