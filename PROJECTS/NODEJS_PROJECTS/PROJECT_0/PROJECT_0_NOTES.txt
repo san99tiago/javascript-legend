@@ -7,5 +7,10 @@ This ability is really important, because we will be dealing with many
 packages that use this way of exports and requires.
 
 ---------------------------------------------------------------------------
+We will be also creating a simple (legacy-way) router to handle http request.
+This will be done with the built-in module "http", but my advice is to
+continue to the "express" section, to dive into better ways of doing servers.
+
+---------------------------------------------------------------------------
 In the next project, we will bre looking at the "new way" of creating these
 packages using the "JSON" approach.
