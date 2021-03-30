@@ -1,6 +1,6 @@
 {
   "name": "async_js",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Understanding Asynchronous functions in JavaScript",
   "scripts": {
     "simple_callbacks": "node src/simple_callbacks.js",
@@ -8,7 +8,9 @@
     "requests_callbacks": "node src/requests_callbacks.js",
     "requests_promises": "node src/requests_promises.js",
     "fetch_api": "node src/fetch_api.js",
-    "async_await": "node src/async_await.js"
+    "async_await": "node src/async_await.js",
+    "rick_morty_callback": "node src/rick_morty_callback_example.js",
+    "rick_morty_promise": "node src/rick_morty_promise_example.js"
   },
   "keywords": [
     "callbacks",
