@@ -21,7 +21,7 @@
   "author": "Santiago Garcia Arango",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "xmlhttprequest": "^1.8.0"
   }
 }
